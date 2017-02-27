@@ -1,8 +1,8 @@
+package org.spandya
 
-object P1 {
-
+class P1[T] {
   //Find the last element in a list
-  def lastInList(list : Array[Any]) : Any = {
+  def lastInList(list : Array[T]) : T = {
     if(list.length == 0) {
       throw new NoSuchElementException
     }
