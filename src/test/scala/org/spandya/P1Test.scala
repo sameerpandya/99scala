@@ -19,18 +19,14 @@ class P1Test extends FunSuite{
 
   test("A set of 1 element will return itself") {
     val expectedString = "last"
-    val singleElementArray = new Array[String](1)
-    singleElementArray.+(expectedString)
+    val singleElementArray = Array[String](expectedString)
 
     assert(expectedString.equals(testobj.lastInList(singleElementArray)))
   }
 
   test("A set of multiple elements will return the last one") {
     val expectedString = "last"
-    val multipleElementArray = new Array[String](3)
-    multipleElementArray.+("one")
-    multipleElementArray.+("two")
-    multipleElementArray.+(expectedString)
+    val multipleElementArray = Array[String]("one", "two", expectedString)
 
     assert(expectedString.equals(testobj.lastInList(multipleElementArray)))
   }
