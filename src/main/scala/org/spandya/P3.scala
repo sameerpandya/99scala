@@ -4,7 +4,20 @@ package org.spandya
   * Created by sameer on 3/5/17.
   */
 class P3[T] {
-  def nth(n: Integer): Unit ={
-    throw new IllegalArgumentException
+  // get nth element of list with zero-indexing.
+  def nth(n: Integer, list: Array[T]): T ={
+    if(list.length - 1 < n) {
+      throw new IndexOutOfBoundsException
+    }
+    if(n < 0) {
+      throw new IllegalArgumentException
+    }
+
+    if(n == 0) {
+      return list.head
+    }
+    else {
+      nth(n-1, list.tail)
+    }
   }
 }
